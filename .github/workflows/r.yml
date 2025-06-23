@@ -54,7 +54,7 @@ env:
 jobs:
   ubuntu:
     name: AMD64 Ubuntu ${{ matrix.ubuntu }} R ${{ matrix.r }} Force-Tests ${{ matrix.force-tests }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 75
     strategy:
@@ -124,7 +124,7 @@ jobs:
 
   bundled:
     name: "${{ matrix.config.org }}/${{ matrix.config.image }}:${{ matrix.config.tag }}"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     strategy:

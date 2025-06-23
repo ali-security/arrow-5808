@@ -70,7 +70,7 @@ jobs:
             clang-tools: "14"
             image: conda-cpp
             llvm: "14"
-            runs-on: ubuntu-latest
+            runs-on: ubuntu-22.04
             simd-level: AVX2
             title: AMD64 Conda C++ AVX2
             ubuntu: "22.04"
@@ -78,7 +78,7 @@ jobs:
             clang-tools: "14"
             image: ubuntu-cpp-sanitizer
             llvm: "14"
-            runs-on: ubuntu-latest
+            runs-on: ubuntu-22.04
             title: AMD64 Ubuntu 22.04 C++ ASAN UBSAN
             ubuntu: "22.04"
           - arch: arm64v8
@@ -134,7 +134,7 @@ jobs:
 
   build-example:
     name: C++ Minimal Build Example
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 45
     steps:
@@ -199,7 +199,7 @@ jobs:
           $(brew --prefix bash)/bin/bash \
             ci/scripts/install_minio.sh latest /usr/local
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: 3.9
       - name: Install Google Cloud Storage Testbench
@@ -424,7 +424,7 @@ jobs:
             https://dl.min.io/server/minio/release/windows-amd64/archive/minio.RELEASE.2022-05-26T05-48-41Z
           chmod +x /usr/local/bin/minio.exe
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: 3.9
       - name: Install Google Cloud Storage Testbench

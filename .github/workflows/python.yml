@@ -47,7 +47,7 @@ jobs:
 
   docker:
     name: ${{ matrix.title }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     strategy:
@@ -161,7 +161,7 @@ jobs:
           fetch-depth: 0
           submodules: recursive
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: MatteoH2O1999/setup-python@v4
         with:
           python-version: '3.11'
       - name: Install Dependencies

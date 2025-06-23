@@ -42,7 +42,7 @@ jobs:
 
   docker:
     name: AMD64 Debian 11 NodeJS 18
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     steps:
@@ -109,7 +109,7 @@ jobs:
 
   windows:
     name: AMD64 Windows NodeJS ${{ matrix.node }}
-    runs-on: windows-latest
+    runs-on: windows-2022
     if: github.event_name == 'push'
     strategy:
       fail-fast: false

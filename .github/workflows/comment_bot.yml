@@ -32,7 +32,7 @@ jobs:
   crossbow:
     name: Listen!
     if: startsWith(github.event.comment.body, '@github-actions crossbow')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Arrow
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -58,7 +58,7 @@ jobs:
   autotune:
     name: "Fix all the things"
     if: startsWith(github.event.comment.body, '@github-actions autotune')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
       - uses: r-lib/actions/pr-fetch@11a22a908006c25fe054c4ef0ac0436b1de3edbe # v2.6.4
@@ -156,7 +156,7 @@ jobs:
   rebase:
     name: "Rebase"
     if: startsWith(github.event.comment.body, '@github-actions rebase')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
       - uses: r-lib/actions/pr-fetch@11a22a908006c25fe054c4ef0ac0436b1de3edbe # v2.6.4
@@ -180,7 +180,7 @@ jobs:
     permissions:
       issues: write
     if: github.event.comment.body == 'take'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:

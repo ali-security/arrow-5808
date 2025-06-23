@@ -26,7 +26,7 @@ jobs:
   # workflow. We trigger a new workflow run which will have permissions to add labels.
   label-when-reviewed:
     name: "Label PRs when reviewed"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: "Upload PR review Payload"
         uses: actions/upload-artifact@v3

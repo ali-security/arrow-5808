@@ -32,9 +32,7 @@ on:
         required: false
         default: 14
 
-  schedule:
     #Crossbow packaging runs at 0 8 * * *
-    - cron: '0 14 * * *'
 
 permissions:
   contents: read
@@ -42,7 +40,7 @@ permissions:
 jobs:
   upload:
     if: github.repository == 'apache/arrow'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Arrow
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0

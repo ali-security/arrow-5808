@@ -46,7 +46,7 @@ env:
 jobs:
   docker:
     name: AMD 64 Ubuntu Swift 5.7
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     steps:

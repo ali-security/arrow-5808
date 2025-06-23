@@ -28,8 +28,6 @@ on:
         description: Number of versions to keep.
         required: false
         default: 14
-  schedule:
-    - cron: '0 14 * * *'
 
 permissions:
   contents: read
@@ -40,7 +38,7 @@ jobs:
     env:
       PREFIX: ${{ github.event.inputs.prefix || ''}}
       CROSSBOW_GITHUB_TOKEN: ${{ github.token }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout Arrow
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0

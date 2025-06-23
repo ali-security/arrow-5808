@@ -57,7 +57,7 @@ jobs:
 
   docker:
     name: AMD64 Conda Integration Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 60
     steps:

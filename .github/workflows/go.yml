@@ -55,11 +55,11 @@ jobs:
           - arch-label: AMD64
             arch: amd64
             go: 1.19
-            runs-on: ubuntu-latest
+            runs-on: ubuntu-22.04
           - arch-label: AMD64
             arch: amd64
             go: '1.20'
-            runs-on: ubuntu-latest
+            runs-on: ubuntu-22.04
           - arch-label: ARM64
             arch: arm64v8
             go: 1.19
@@ -130,7 +130,7 @@ jobs:
 
   build386:
     name: Go Cross-build for 386
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 20
     steps:
@@ -151,7 +151,7 @@ jobs:
 
   docker_cgo:
     name: AMD64 Debian 11 Go ${{ matrix.go }} - CGO
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 20
     strategy:
@@ -192,7 +192,7 @@ jobs:
 
   docker_cgo_python:
     name: AMD64 Debian 11 Go ${{ matrix.go }} - CGO Python
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     timeout-minutes: 15
     strategy:
@@ -423,7 +423,7 @@ jobs:
 
   tinygo:
     name: TinyGo
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
     env:
       TINYGO_VERSION: 0.27.0
